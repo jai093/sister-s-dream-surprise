@@ -9,7 +9,7 @@ const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Happy birthday music - using a royalty-free happy birthday tune
-  const musicUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+  const musicUrl = "https://soundcloud.com/hassan-oubouhia/badtameez-dil-yeh-jawaani-hai-deewani-ranbir-kapoor?si=d7606d7cfcc84445a751277d413eed8a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing";
 
   useEffect(() => {
     // Auto-hide prompt after 8 seconds
