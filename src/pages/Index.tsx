@@ -1,12 +1,78 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import Preloader from '@/components/Preloader';
+import FloatingHearts from '@/components/FloatingHearts';
+import HeroSection from '@/components/HeroSection';
+import PhotoGallery from '@/components/PhotoGallery';
+import SpecialTraits from '@/components/SpecialTraits';
+import LoveLetter from '@/components/LoveLetter';
+import ShareSection from '@/components/ShareSection';
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      // Small delay before showing content for smooth transition
+      const timer = setTimeout(() => setShowContent(true), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-hero relative overflow-hidden">
+      {/* Preloader */}
+      <AnimatePresence>
+        {loading && (
+          <Preloader onComplete={() => setLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      {/* Main content */}
+      <AnimatePresence>
+        {showContent && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Floating hearts background */}
+            <FloatingHearts />
+
+            {/* Hero Section */}
+            <HeroSection />
+
+            {/* Photo Gallery */}
+            <PhotoGallery />
+
+            {/* What Makes You Special */}
+            <SpecialTraits />
+
+            {/* Love Letter */}
+            <LoveLetter />
+
+            {/* Share Section */}
+            <ShareSection />
+
+            {/* Footer */}
+            <footer className="py-8 text-center bg-gradient-romantic">
+              <p className="font-body text-muted-foreground text-sm">
+                Crafted with infinite love 💕 Happy Birthday Navya!
+              </p>
+            </footer>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
