@@ -6,15 +6,9 @@ import { useState, useEffect } from 'react';
 const HeroSection = () => {
   const [showFullText, setShowFullText] = useState(false);
   const [age, setAge] = useState(0);
-  const targetAge = 24; // Customize this!
+  const targetAge = 22; // Customize this!
   
-  const today = new Date();
-  const formattedDate = today.toLocaleDateString('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+  const formattedDate = "Monday, January 19, 2026";
 
   useEffect(() => {
     const timer = setTimeout(() => setShowFullText(true), 500);

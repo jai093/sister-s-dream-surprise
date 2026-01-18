@@ -12,8 +12,8 @@ import photo6 from '@/assets/photos/photo6.jpg';
 import photo7 from '@/assets/photos/photo7.jpg';
 
 const photos = [
-  { src: photo1, caption: "My beautiful sister 💕" },
-  { src: photo2, caption: "Looking stunning as always ✨" },
+  { src: photo1, caption: "Looking stunning as always ✨" },
+  { src: photo2, caption: "My beautiful sister 💕" },
   { src: photo3, caption: "Those eyes that light up the world 💖" },
   { src: photo4, caption: "Style icon vibes 🎀" },
   { src: photo5, caption: "Adventures and smiles 🌟" },

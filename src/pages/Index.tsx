@@ -7,6 +7,7 @@ import PhotoGallery from '@/components/PhotoGallery';
 import SpecialTraits from '@/components/SpecialTraits';
 import LoveLetter from '@/components/LoveLetter';
 import ShareSection from '@/components/ShareSection';
+import BackgroundMusic from '@/components/BackgroundMusic';
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
@@ -46,6 +47,9 @@ const Index = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
+            {/* Background Music */}
+            <BackgroundMusic />
+
             {/* Floating hearts background */}
             <FloatingHearts />
 
